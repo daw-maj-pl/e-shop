@@ -22,7 +22,7 @@ import Rating from '../components/Rating';
 const ProductScreen = ({ history, match }) => {
   // const product = products.find(p => p._id === match.params.id);
   // const [product, setProduct] = useState({});
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   const dispatch = useDispatch();
 
