@@ -218,6 +218,9 @@ export const listUsers = () => async (dispatch, getState) => {
       error.response && error.response.data.message
         ? error.response.data.message
         : error.message;
+    if (message === 'Not authorized, token failed') {
+      dispatch(logout());
+    }
     dispatch({
       type: USER_LIST_FAIL,
       payload: message
@@ -249,6 +252,9 @@ export const deleteUser = id => async (dispatch, getState) => {
       error.response && error.response.data.message
         ? error.response.data.message
         : error.message;
+    if (message === 'Not authorized, token failed') {
+      dispatch(logout());
+    }
     dispatch({
       type: USER_DELETE_FAIL,
       payload: message
@@ -283,6 +289,9 @@ export const updateUser = user => async (dispatch, getState) => {
       error.response && error.response.data.message
         ? error.response.data.message
         : error.message;
+    if (message === 'Not authorized, token failed') {
+      dispatch(logout());
+    }
     dispatch({
       type: USER_UPDATE_FAIL,
       payload: message
