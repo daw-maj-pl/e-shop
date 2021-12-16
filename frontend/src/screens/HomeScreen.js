@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 // import axios from 'axios';
-
 import Product from '../components/Product';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
