@@ -38,6 +38,15 @@ const PlaceOrderScreen = ({ history }) => {
   const orderCreate = useSelector(state => state.orderCreate);
   const { order, success, error } = orderCreate;
 
+  useEffect(() => {
+    if (success) {
+      history.push(`/order/${order._id}`);
+      dispatch({ type: USER_DETAILS_RESET });
+      dispatch({ type: ORDER_CREATE_RESET });
+    }
+    // eslint-disable-next-line
+  }, [history, success]);
+
   const placeOrderHandler = () => {
     dispatch(
       createOrder({
@@ -51,15 +60,6 @@ const PlaceOrderScreen = ({ history }) => {
       })
     );
   };
-
-  useEffect(() => {
-    if (success) {
-      history.push(`/order/${order._id}`);
-      dispatch({ type: USER_DETAILS_RESET });
-      dispatch({ type: ORDER_CREATE_RESET });
-    }
-    // eslint-disable-next-line
-  }, [history, success]);
 
   return (
     <>
