@@ -1,4 +1,7 @@
-# E-shop
+## E-shop
+
+Full stack e-commerce application
 
 ### Hosting:
-https://e-shop-eu.herokuapp.com/
+
+https://e-shop-oky9.onrender.com
